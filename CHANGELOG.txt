@@ -3,8 +3,10 @@
 ## Version 2.0 - (Modified by Serpentsoft)
 
 1. Add gallery with preview images and ability to remove images one by one.
-2. Fix Quote post (Auto Title) issue - when you want make a quote post has content besides the Quote-Text.
-3. RTL style support.
+2. Add four gallery styles (Slider, Grid 2 Cols, Grid 3 Cols, Grid 4 Cols).
+3. Ability to open images in Lightbox in full size.
+4. Fix Quote post (Auto Title) issue - when you want make a quote post has content besides the Quote-Text.
+5. RTL style support.
 
 # CF Post Formats
 
