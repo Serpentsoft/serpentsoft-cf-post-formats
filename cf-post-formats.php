@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Serpentsoft CF Post Formats
-Plugin URI: http://crowdfavorite.com
+Plugin URI: https://github.com/Serpentsoft/serpentsoft-cf-post-formats
 Description: Custom post format admin UI - Modified by Serpentsoft
 Text Domain: cf-post-formats
 Domain Path: /languages
