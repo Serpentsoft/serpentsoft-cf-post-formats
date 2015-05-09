@@ -1,11 +1,14 @@
 <?php
 /*
 Plugin Name: Serpentsoft CF Post Formats
+Version: 2.0.0
 Plugin URI: https://github.com/Serpentsoft/serpentsoft-cf-post-formats
 Description: Custom post format admin UI - Modified by Serpentsoft
+License: GPL2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cf-post-formats
 Domain Path: /languages
-Version: 2.0.0
+
 Author: crowdfavorite
 Author URI: http://crowdfavorite.com
 */
@@ -31,7 +34,6 @@ Author URI: http://crowdfavorite.com
  * GNU General Public License for more details.
  * **********************************************************************
  */
-
 if (!defined('CFPF_VERSION')) {
 
 define('CFPF_VERSION', '2.0');
