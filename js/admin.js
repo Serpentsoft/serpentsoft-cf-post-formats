@@ -35,49 +35,50 @@ jQuery(function($) {
 			},
 
 			standard: function() {
-				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview').hide();
+				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview, #cfpf-format-status').hide();
 				$('#titlewrap').show();
 				$('#postimagediv-placeholder').replaceWith($('#postimagediv'));
 			},
 			
 			status: function() {
-				$('#titlewrap, #cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview').hide();
+				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview').hide();
+				$('#titlewrap, #cfpf-format-status').show();
 				$('#postimagediv-placeholder').replaceWith($('#postimagediv'));
-				$('#content:visible').focus();
+				//$('#content:visible').focus();
 			},
 
 			link: function() {
-				$('#cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview').hide();
+				$('#cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview, #cfpf-format-status').hide();
 				$('#titlewrap, #cfpf-format-link-url').show();
 				$('#postimagediv-placeholder').replaceWith($('#postimagediv'));
 			},
 			
 			image: function() {
-				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview').hide();
+				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview, #cfpf-format-status').hide();
 				$('#titlewrap').show();
 				$('#postimagediv').after('<div id="postimagediv-placeholder"></div>').insertAfter('#titlediv');
 			},
 
 			gallery: function() {
-				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields').hide();
+				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-status').hide();
 				$('#titlewrap, #cfpf-format-gallery-preview').show();
 				$('#postimagediv-placeholder').replaceWith($('#postimagediv'));
 			},
 
 			video: function() {
-				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-gallery-preview, #cfpf-format-audio-fields').hide();
+				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-gallery-preview, #cfpf-format-audio-fields, #cfpf-format-status').hide();
 				$('#titlewrap, #cfpf-format-video-fields').show();
 				$('#postimagediv-placeholder').replaceWith($('#postimagediv'));
 			},
 
 			quote: function() {
-				$('#cfpf-format-link-url, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview').hide();
+				$('#cfpf-format-link-url, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-gallery-preview, #cfpf-format-status').hide();
 				$('#cfpf-format-quote-fields').show().find(':input:first').focus();
 				$('#postimagediv-placeholder').replaceWith($('#postimagediv'));
 			},
 
 			audio: function() {
-				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-gallery-preview').hide();
+				$('#cfpf-format-link-url, #cfpf-format-quote-fields, #cfpf-format-video-fields, #cfpf-format-gallery-preview, #cfpf-format-status').hide();
 				$('#titlewrap, #cfpf-format-audio-fields').show();
 				$('#postimagediv-placeholder').replaceWith($('#postimagediv'));
 			},
@@ -110,7 +111,7 @@ jQuery(function($) {
 	
 	// move tabs in to place
 	$('#cf-post-format-tabs').insertBefore($('form#post')).show();
-	$('#cfpf-format-link-url, #cfpf-format-video-fields, #cfpf-format-audio-fields').insertAfter($('#titlediv'));
+	$('#cfpf-format-link-url, #cfpf-format-video-fields, #cfpf-format-audio-fields, #cfpf-format-status').insertAfter($('#titlediv'));
 	$('#cfpf-format-gallery-preview').find('dt a').each(function() {
 		$(this).replaceWith($(this.childNodes)); // remove links
 	}).end().insertAfter($('#titlediv'));

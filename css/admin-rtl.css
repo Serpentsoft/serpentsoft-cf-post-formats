@@ -20,6 +20,19 @@
 	margin-bottom: 25px;
 	  margin-top: 25px;
 }
+
+.cf-elm-block .input-80-per{
+	width: 80% !important;
+}
+
+.cf-elm-block .label-inline-block{
+	display: inline-block !important;
+}
+
+.cf-elm-block .label-inline-block.fix-width-100{
+	width: 100px !important;
+}
+
 .cf-elm-block label {
 	color: #666;
 	  display: block;

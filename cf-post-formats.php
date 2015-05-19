@@ -130,6 +130,7 @@ function cfpf_post_admin_setup() {
 			'video',
 			'gallery',
 			'audio',
+			'status'
 		);
 		foreach ($format_views as $format) {
 			if (in_array($format, $post_formats)) {
@@ -140,8 +141,16 @@ function cfpf_post_admin_setup() {
 }
 
 function cfpf_format_link_save_post($post_id) {
-	if (!defined('XMLRPC_REQUEST') && isset($_POST['_format_link_url'])) {
-		update_post_meta($post_id, '_format_link_url', $_POST['_format_link_url']);
+	if (!defined('XMLRPC_REQUEST')) {
+		$keys = array(
+			'_format_link_display_text',
+			'_format_link_url'
+		);
+		foreach ($keys as $key) {
+			if (isset($_POST[$key])) {
+				update_post_meta($post_id, $key, $_POST[$key]);
+			}
+		}
 	}
 }
 // action added in cfpf_admin_init()
@@ -170,9 +179,37 @@ function cfpf_format_auto_title_post($post_id, $post) {
 	add_action('save_post', 'cfpf_format_quote_save_post', 10, 2);
 }
 
+function cfpf_post_status_type() {
+	$post = get_post();
+	$value = get_post_meta($post->ID, '_format_status_type', true);
+	switch ($value) {
+		case 'facebook':
+		case 'twitter':
+		case 'googleplus':
+			$value = $value;
+		break;
+		default:
+			$value = 'facebook';
+	}
+	return $value;
+}
+
 function cfpf_format_status_save_post($post_id, $post) {
-	if (has_post_format('status', $post)) {
-		cfpf_format_auto_title_post($post_id, $post);
+	//if (has_post_format('status', $post)) {
+	//	cfpf_format_auto_title_post($post_id, $post);
+	//}
+	if (!defined('XMLRPC_REQUEST')) {
+		$keys = array(
+			'_format_status_type',
+			'_format_status_facebook_post_url',
+			'_format_status_twitter_tweet_url',
+			'_format_status_googleplus_url'
+		);
+		foreach ($keys as $key) {
+			if (isset($_POST[$key])) {
+				update_post_meta($post_id, $key, $_POST[$key]);
+			}
+		}
 	}
 }
 // action added in cfpf_admin_init()
